@@ -1,0 +1,21 @@
+# Programme names
+/client
+/server
+
+# Object files
+*.o
+*.ko
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.a
+
+# Debug files
+*.dSYM/
+
+# IDE config files
+.vscode
