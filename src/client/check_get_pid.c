@@ -6,7 +6,7 @@
 /*   By: moseddik <moseddik@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 10:18:06 by moseddik          #+#    #+#             */
-/*   Updated: 2022/05/12 10:25:45 by moseddik         ###   ########.fr       */
+/*   Updated: 2022/05/12 14:36:50 by moseddik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,13 @@ int	check_get_pid(char *pid_str)
 
 	if (check_error(pid_str))
 	{
-		ft_putendl_fd("Invalid PID", 2);
+		ft_putendl_fd("Invalid PID", STDERR_FILENO);
 		return (-1);
 	}
 	pid = ft_atoi(pid_str);
 	if (pid < 0)
 	{
-		ft_putendl_fd("Invalid PID", 2);
+		ft_putendl_fd("Invalid PID", STDERR_FILENO);
 		return (-1);
 	}
 	return (pid);
