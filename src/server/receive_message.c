@@ -6,17 +6,18 @@
 /*   By: moseddik <moseddik@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 09:24:13 by moseddik          #+#    #+#             */
-/*   Updated: 2022/05/13 17:57:38 by moseddik         ###   ########.fr       */
+/*   Updated: 2022/05/13 18:13:43 by moseddik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
+char	g_message;
+
 void	handle_siguser(int signum, siginfo_t *info, void *unused)
 {
 	static int		i;
 	static pid_t	pid_client;
-	static char		message;
 
 	(void) unused;
 	if (pid_client == 0)
@@ -24,18 +25,20 @@ void	handle_siguser(int signum, siginfo_t *info, void *unused)
 	else if (info->si_pid != pid_client)
 	{
 		pid_client = info->si_pid;
-		message = 0;
+		g_message = 0;
 		i = 0;
 	}
 	if (signum == SIGZERO)
-		message <<= 1;
+		g_message <<= 1;
 	else if (signum == SIGONE)
-		message = (message << 1) | 1;
+		g_message = (g_message << 1) | 1;
 	i++;
 	if (i == 8)
 	{
-		ft_printf("%c", message);
-		message = 0;
+		if (g_message == '\0')
+			kill(pid_client, SIGONE);
+		ft_printf("%c", g_message);
+		g_message = 0;
 		i = 0;
 	}
 }
