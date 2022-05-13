@@ -6,7 +6,7 @@
 /*   By: moseddik <moseddik@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 12:01:30 by moseddik          #+#    #+#             */
-/*   Updated: 2022/05/12 14:48:02 by moseddik         ###   ########.fr       */
+/*   Updated: 2022/05/13 16:04:21 by moseddik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	send_byte(char byte, pid_t	pid)
 	i = 7;
 	while (i >= 0)
 	{
-		printf("Send\n");
 		shifted_bit = (byte >> i) & 1;
 		if (shifted_bit == 1)
 			kill_ret = kill(pid, SIGONE);
@@ -38,13 +37,15 @@ int	send_byte(char byte, pid_t	pid)
 	return (0);
 }
 
-void	send_message(char *message, pid_t pid)
+int	send_message(char *message, pid_t pid)
 {
 	int	i;
 
 	i = -1;
 	while (message[++i] != '\0')
 	{
-		send_byte(message[i], pid);
+		if (send_byte(message[i], pid) == -1)
+			return (-1);
 	}
+	return (0);
 }
