@@ -6,7 +6,7 @@
 /*   By: moseddik <moseddik@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 16:20:37 by moseddik          #+#    #+#             */
-/*   Updated: 2022/05/13 18:19:44 by moseddik         ###   ########.fr       */
+/*   Updated: 2022/05/14 07:49:06 by moseddik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # define KEEP_GOING 1
 
 # define GREEN "\e[0;32m"
+# define RED "\e[1;31m"
 # define NC "\e[0m"
 
 int		check_get_pid(char *pid_str);

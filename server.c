@@ -6,7 +6,7 @@
 /*   By: moseddik <moseddik@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 16:19:39 by moseddik          #+#    #+#             */
-/*   Updated: 2022/05/13 16:21:06 by moseddik         ###   ########.fr       */
+/*   Updated: 2022/05/14 07:57:17 by moseddik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(void)
 	pid_t				pid;
 
 	pid = getpid();
-	ft_printf("PID : %d\n", pid);
+	ft_printf("%s\nPID : %d\n%s", RED, pid, NC);
 	sigemptyset(&action.sa_mask);
 	sigaddset(&action.sa_mask, SIGZERO);
 	sigaddset(&action.sa_mask, SIGONE);
