@@ -6,7 +6,7 @@
 /*   By: moseddik <moseddik@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 12:01:30 by moseddik          #+#    #+#             */
-/*   Updated: 2022/05/13 18:02:30 by moseddik         ###   ########.fr       */
+/*   Updated: 2022/05/15 20:14:35 by moseddik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,5 @@ int	send_message(char *message, pid_t pid)
 		if (send_byte(message[i], pid) == -1)
 			return (-1);
 	}
-	if (send_byte('\0', pid) == -1)
-		return (-1);
 	return (0);
 }

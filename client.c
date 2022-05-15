@@ -6,7 +6,7 @@
 /*   By: moseddik <moseddik@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 16:20:20 by moseddik          #+#    #+#             */
-/*   Updated: 2022/05/13 18:18:21 by moseddik         ###   ########.fr       */
+/*   Updated: 2022/05/15 20:14:58 by moseddik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(int ac, char **av)
 	pid = check_get_pid(av[1]);
 	if (pid == -1)
 		return (-1);
-	signal(SIGONE, &confirm_message);
 	if (send_message(av[2], pid) == -1)
 		return (-1);
 	usleep(800);

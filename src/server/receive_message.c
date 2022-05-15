@@ -6,7 +6,7 @@
 /*   By: moseddik <moseddik@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 09:24:13 by moseddik          #+#    #+#             */
-/*   Updated: 2022/05/13 18:13:43 by moseddik         ###   ########.fr       */
+/*   Updated: 2022/05/15 20:16:12 by moseddik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ void	handle_siguser(int signum, siginfo_t *info, void *unused)
 	i++;
 	if (i == 8)
 	{
-		if (g_message == '\0')
-			kill(pid_client, SIGONE);
 		ft_printf("%c", g_message);
 		g_message = 0;
 		i = 0;
