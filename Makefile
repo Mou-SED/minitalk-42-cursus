@@ -51,6 +51,8 @@ $(OBJS_DIR)/%.o: $(SSRCS_DIR)/%.c $(addprefix $(INCLUDES_DIR)/, $(HEADERS))
 $(LIBFTPRINTF_DIR)/$(LIBFTPRINTF):
 	@make -C $(LIBFTPRINTF_DIR)
 
+bonus: all
+
 clean:
 	@make clean -C $(LIBFTPRINTF_DIR)
 	@$(RM) $(OBJS_DIR)
